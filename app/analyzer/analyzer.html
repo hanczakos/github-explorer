@@ -1,0 +1,17 @@
+<div class="results-block">
+    <div class="container">
+        <h3>Commit activity of AngularJS</h3>
+        <p>This page shows the commit activity in the last year of the official <a href="https://github.com/angular/angular" target="_blank">angular repository</a>.</p>
+        <p>You can choose to display the average commit number made on each day of the week by choosing the <span class="strong">daily</span> option,
+            or you can see the number of total commits made each week by choosing the <span class="strong">weekly</span> option.</p>
+
+        <span>Show commit history</span>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary" ng-class="{'active': vm.type=='daily'}" ng-click="vm.setType('daily')">Daily</button>
+            <button type="button" class="btn btn-primary" ng-class="{'active': vm.type=='weekly'}" ng-click="vm.setType('weekly')">Weekly</button>
+        </div>
+
+        <commits-graph type="{{vm.type}}"></commits-graph>
+    </div>
+</div>
+

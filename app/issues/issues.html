@@ -1,0 +1,34 @@
+<div class="results-block">
+    <div class="container">
+        <h3 class="title">Issues of {{vm.repositoryName}} by {{vm.repositoryOwner}}</h3>
+        <div class="table-responsive" ng-if="vm.issues">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Issue title</th>
+                    <th>URL</th>
+                    <th>Author</th>
+                    <th>Updated at</th>
+                    <th>State</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="issue in vm.issues">
+                    <td>{{issue.title}}</td>
+                    <td><a ng-href="{{issue.html_url}}" target="_blank">{{issue.html_url}}</a></td>
+                    <td>{{issue.user.login}}</td>
+                    <td>{{issue.updated_at | date:'yyyy-MM-dd'}}</td>
+                    <td>{{issue.state}}</td>
+                    <td><a ng-href="#/issues/{{repository.full_name}}">{{repository.open_issues_count}}</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div ng-if="vm.loading">
+            Loading...
+        </div>
+        <div ng-if="!vm.loading && vm.issues.length == 0">
+            There are no issues to show.
+        </div>
+    </div>
+</div>

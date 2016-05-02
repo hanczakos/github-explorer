@@ -1,0 +1,74 @@
+$dark-color: #2D2D50;
+$primary-color: #286090;
+$neutral-color: #EEE;
+$white: #FFF;
+
+.dark-wrapper {
+  background: $dark-color;
+  color: $white;
+}
+
+header {
+  @extend .dark-wrapper;
+
+  text-align: center;
+  padding: 40px 0;
+}
+
+footer {
+  @extend .dark-wrapper;
+
+  p {
+    margin: 20px 0;
+    font-weight: 600;
+  }
+}
+
+nav {
+  background: $primary-color;
+
+  ul {
+    li {
+      font-weight: 600;
+
+      a {
+        color: $white;
+        transition: all .3s;
+        cursor: pointer;
+
+        &:hover {
+          background: $neutral-color;
+          color: $dark-color;
+        }
+
+        &.active {
+          border-bottom: solid 3px $white;
+        }
+      }
+    }
+  }
+}
+
+.block-base {
+  padding: 60px 0;
+}
+
+.search-block {
+  @extend .block-base;
+
+  background: $neutral-color;
+
+}
+
+h3.title {
+  margin-bottom: 40px;
+}
+
+.results-block {
+  @extend .block-base;
+
+}
+
+.strong {
+  font-weight: 600;
+}

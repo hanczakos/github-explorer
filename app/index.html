@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Blackswan homework</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- bower:css --> <!-- endbower -->
+    <!-- inject:css --> <!-- endinject -->
+</head>
+<body ng-app="blackswan-homework">
+
+    <header>
+        <div class="container">
+            <h1>GitHub explorer</h1>
+            <h3>Search and analyze repositories easily.</h3>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li><a ng-href="#/explorer">Explorer</a></li>
+                <li><a ng-href="#/analyzer">Analyzer</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ng-view></ng-view>
+
+    <footer>
+        <div class="container">
+            <p>Created by Ákos Hancz.</p>
+        </div>
+    </footer>
+
+    <!-- bower:js --> <!-- endbower -->
+    <!-- inject:js --> <!-- endinject -->
+</body>
+</html>

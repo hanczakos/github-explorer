@@ -1,0 +1,47 @@
+<div class="search-block">
+    <div class="container">
+        <form ng-submit="vm.searchRepositories()">
+            <div class="input-group">
+                <input type="text" class="form-control input-lg" placeholder="Start typing repository name..."
+                    ng-model="vm.searchInput" ng-change="vm.searchRepositories()" ng-model-options="{ debounce: 500 }">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary input-lg" type="submit">Search</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="results-block">
+    <div class="container">
+        <div ng-if="vm.searchInput">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Repository name</th>
+                            <th>URL</th>
+                            <th>Description</th>
+                            <th>Forks count</th>
+                            <th>Stargazers count</th>
+                            <th>Open issues count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="repository in vm.foundRepositories">
+                            <td>{{repository.name}}</td>
+                            <td><a ng-href="{{repository.html_url}}" target="_blank">{{repository.html_url}}</a></td>
+                            <td>{{repository.description}}</td>
+                            <td>{{repository.forks_count}}</td>
+                            <td>{{repository.stargazers_count}}</td>
+                            <td><a ng-href="#/issues/{{repository.full_name}}">{{repository.open_issues_count}}</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p ng-if="vm.totalResultsCount>30">There are {{vm.totalResultsCount}} results. Only the first 30 are shown. Try to specify your keyword.</p>
+        </div>
+        <div ng-if="!vm.searchInput">
+            <p>Type the name of a repository to start searching.</p>
+        </div>
+    </div>
+</div>
