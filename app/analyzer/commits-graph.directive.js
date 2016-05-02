@@ -2,7 +2,7 @@ angular.module('blackswan-homework')
     .directive('commitsGraph', function(AngularRepositoryService) {
         return {
             restrict: 'E',
-            template: '<canvas width="400" height="400"></canvas>',
+            template: '<canvas width="400" height="200"></canvas>',
             replace: true,
             scope: {
                 type: '@'
