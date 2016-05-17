@@ -1,7 +1,4 @@
 # GitHub Explorer
-A homework for BlackSwan by Ákos Hancz.
-
-This site uses AngularJS to demonstrate my skills about the framework.
 
 ## How to run it
 
